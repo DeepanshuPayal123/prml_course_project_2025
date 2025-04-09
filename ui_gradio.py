@@ -36,4 +36,5 @@ demo = gr.TabbedInterface([model_1_page, model_2_page],
 
 
 if __name__ == "__main__":
-    demo.launch(server_name="172.31.44.250")
+    demo.launch()
+

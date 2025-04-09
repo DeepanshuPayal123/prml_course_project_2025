@@ -70,7 +70,8 @@ def predict(features_path,image):
       for i in range(len(y_data)):
         train_x.append(x_data[i])
     
-    features = torch.load(features_path)
+    features = torch.load(features_path, map_location=torch.device('cpu'))
+
     
     resnet_train_data = []
     for i in range(len(features)):
@@ -91,7 +92,9 @@ def predict(features_path,image):
     image_tensor = transform(pil_image).unsqueeze(0) 
     resnet = models.resnet50(pretrained=True)
     model_check = HiddenLayer(resnet)
-    model_check.load_state_dict(torch.load("CIFAR_end_hll.pt"))
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model_check.load_state_dict(torch.load("CIFAR_end_hll.pt", map_location=device))
+
     model_check.eval()
     
     with torch.no_grad():
