@@ -1,5 +1,22 @@
 from sklearn.decomposition import PCA
 import numpy as np
+from skimage.feature import hog
+from skimage.color import rgb2gray
+
+
+def extract_hog_features(images, pixels_per_cell=(8, 8), cells_per_block=(2, 2), orientations=9):
+    hog_features = []
+    for image in images:
+        gray_image = rgb2gray(image)
+        features = hog(
+            gray_image,
+            orientations=orientations,
+            pixels_per_cell=pixels_per_cell,
+            cells_per_block=cells_per_block,
+            block_norm='L2-Hys'
+        )
+        hog_features.append(features)
+    return np.array(hog_features)
 
 
 def pca_for_rgb(img, n_components):
