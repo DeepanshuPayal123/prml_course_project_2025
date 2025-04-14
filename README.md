@@ -11,11 +11,10 @@
 
 
 ## Team Members:
-  - Akshat Jain (B22CS096)
-  - Harshiv Shah (B22CS098)
-  - Mehta Jay Kamalkumar (B22CS034)
-  - Jyotin Goel (B22AI063)
-  - Rhythm Baghel (B22CS042)
+  - Sourav Chahar (B23EE1071)
+  - Deepanshu Payal (B23CS1012)
+  - Harsh Kumar (B23EE1025)
+
 
 ## Demo
 
@@ -110,15 +109,15 @@ This guide will help you set up and install the necessary dependencies for runni
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/gjyotin305/CSL2050_CourseProject.git
+   git clone https://github.com/DeepanshuPayal123/prml_course_project_2025.git
 2. ```bash
-   cd CSL2050_CourseProject
+   cd prml_course_project_2025
 3. ```bash
    pip install -r requirements.txt
 4. ```bash
    python ui_gradio.py
 
-This command will start the Gradio interface and display the URL where you can access it. By default, it will run on `http://127.0.0.1:7860/`. 
+This command will start the Gradio interface and display the URL where you can access it. By default, it will run on `http://127.0.0.1:7860/?`. 
 
 If you want to specify a custom IP address, you can change the argument of `demo.launch()` by inserting `server_name = "YOUR_IP_ADDRESS"`. Alternatively, you can use `share=True` to generate a public link.
 
