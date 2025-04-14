@@ -107,6 +107,7 @@ def predict(features_path,image):
 
 def retrieve(image,k,feature_path=r"Model\Resnet50_train_features.pt"):
     print(image.shape)
+
     test_label,z,features,class_images_dict,train_x = predict(feature_path,image)
     class_indices = class_images_dict[test_label.item()]
     class_features = [(features[idx], idx) for idx in class_indices]
